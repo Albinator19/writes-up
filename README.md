@@ -14,6 +14,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Bandit` : Fondamentaux Linux, SSH, Scripting bash et Git.
 * **[HackTheBox](https://app.hackthebox.com/)**
     * `Three` : Fondamentaux AWS, S3 Bucket, ACL, Subdomain Enumeration.
+    * `Archetype` : Windows, SMB, Microsoft SQL Server, winpeas.exe, nc64.exe.
 
 ---
 
