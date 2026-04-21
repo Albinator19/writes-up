@@ -17,6 +17,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Archetype` : Windows, SMB, Microsoft SQL Server, winpeas.exe, nc64.exe.
     * `Oopsie` : IDOR, Cookie, Path Traversal, SUID, Upload.
     * `Vaccine` : FTP, zip2john, JohnTheRipper, SQLMAP, vi.
+    * `Unified` : CVE (Log4Shell), Exploit, JNDI, LDAP, MongoDB.
 
 ---
 
