@@ -16,6 +16,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Three` : Fondamentaux AWS, S3 Bucket, ACL, Subdomain Enumeration.
     * `Archetype` : Windows, SMB, Microsoft SQL Server, winpeas.exe, nc64.exe.
     * `Oopsie` : IDOR, Cookie, Path Traversal, SUID, Upload.
+    * `Vaccine` : FTP, zip2john, JohnTheRipper, SQLMAP, vi.
 
 ---
 
