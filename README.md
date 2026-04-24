@@ -18,6 +18,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Oopsie` : IDOR, Cookie, Path Traversal, SUID, Upload.
     * `Vaccine` : FTP, zip2john, JohnTheRipper, SQLMAP, vi.
     * `Unified` : CVE (Log4Shell), Exploit, JNDI, LDAP, MongoDB.
+    * `Silentium` : API, Flowise, Gogs, symlink, CVE-2025-58434, CVE-2025-59528, CVE-2025-8110.
 
 ---
 
