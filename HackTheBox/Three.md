@@ -1,4 +1,4 @@
-# Write-up — HackTheBox : Three
+# Write-up -- HackTheBox : Three
  
 Write-up réalisé pour la machine Three de HackTheBox. L'objectif est d'exploiter un bucket S3 AWS dont les permissions (ACL) sont mal configurées pour obtenir un accès en écriture et y déposer un web shell.
  
@@ -110,7 +110,7 @@ On a les droits de lecture, et on voit un fichier `index.php` : le serveur web t
  
 ---
  
-## 8. Exploitation — Upload d'un web shell
+## 8. Exploitation : Upload d'un web shell
  
 Puisqu'on a probablement aussi les droits d'écriture (c'est l'objet de la mauvaise configuration ACL), on prépare un web shell PHP :
  
