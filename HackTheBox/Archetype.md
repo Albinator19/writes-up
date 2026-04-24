@@ -1,4 +1,4 @@
-# Write-up — HackTheBox : Archetype
+# Write-up -- HackTheBox : Archetype
 
 Write-up réalisé pour la machine Archetype de HackTheBox. L'objectif est d'exploiter un partage SMB accessible sans authentification pour y récupérer des credentials, puis d'en abuser pour obtenir une exécution de commandes via un serveur MSSQL, et finalement escalader jusqu'à Administrator.
 
