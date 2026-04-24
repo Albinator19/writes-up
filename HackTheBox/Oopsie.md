@@ -1,4 +1,4 @@
-# Write-up — HackTheBox : Oopsie
+# Write-up -- HackTheBox : Oopsie
 
 Write-up réalisé pour la machine Oopsie de HackTheBox. L'objectif est d'exploiter une mauvaise gestion des droits d'accès via les cookies de session pour accéder à une fonctionnalité d'upload réservée aux admins, y déposer un reverse shell, puis escalader les privilèges via un binaire SUID qui appelle `cat` de façon non sécurisée.
 
