@@ -1,4 +1,4 @@
-# Write-up — HackTheBox : Vaccine
+# Write-up -- HackTheBox : Vaccine
 
 Write-up réalisé pour la machine Vaccine de HackTheBox. L'objectif est d'enchaîner plusieurs techniques : accès FTP anonyme, crack de mot de passe, injection SQL pour obtenir un shell, et escalade de privilèges via un binaire autorisé en sudo qui peut être détourné pour spawner un shell root.
 
