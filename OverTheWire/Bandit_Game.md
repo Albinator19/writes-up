@@ -1,4 +1,4 @@
-# Write-up — OverTheWire : Bandit
+# Write-up -- OverTheWire : Bandit
 
 Write-up réalisé pour le jeu du Bandit de OverTheWire. J'ai noté mes commandes au fur et à mesure des niveaux. Les passwords changent régulièrement côté OverTheWire donc les miens ne seront probablement plus valides quand vous lirez cela, l'important c'est la démarche.
 
