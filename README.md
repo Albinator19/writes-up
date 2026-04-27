@@ -20,6 +20,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Unified` : CVE (Log4Shell), Exploit, JNDI, LDAP, MongoDB.
     * `Silentium` : API, Flowise, Gogs, symlink, CVE-2025-58434, CVE-2025-59528, CVE-2025-8110.
     * `Cap` : IDOR, Wireshark, FTP, Capability.
+    * `Facts` : CVE-2025-2304, CVE-2024-46987, CMS Camaleon, AWS Bucket S3 (s3cmd), ssh2john, Facter.
 
 ---
 
