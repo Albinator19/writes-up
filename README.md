@@ -22,6 +22,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Cap` : IDOR, Wireshark, FTP, Capability.
     * `Facts` : CVE-2025-2304, CVE-2024-46987, CMS Camaleon, AWS Bucket S3 (s3cmd), ssh2john, Facter.
     * `CCTV` : Injection SQL, ZoneMinder, Bcrypt, bridge Docker, MotionEye, CVE-2024-51482.
+    * `Reactor` : Next.js, CVE-2025-55182(React2Shell), SQLite, Debugger Node.js.
 
 ---
 
