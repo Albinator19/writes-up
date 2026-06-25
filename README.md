@@ -16,13 +16,15 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Three` : Fondamentaux AWS, S3 Bucket, ACL, Subdomain Enumeration.
     * `Archetype` : Windows, SMB, Microsoft SQL Server, winpeas.exe, nc64.exe.
     * `Oopsie` : IDOR, Cookie, Path Traversal, SUID, Upload.
-    * `Vaccine` : FTP, zip2john, JohnTheRipper, SQLMAP, vi.
-    * `Unified` : CVE (Log4Shell), Exploit, JNDI, LDAP, MongoDB.
+    * `Vaccine` : FTP, zip2john, johnTheRipper, SQLMAP, Vi.
+    * `Unified` : Log4Shell, JNDI, LDAP, MongoDB.
     * `Silentium` : API, Flowise, Gogs, symlink, CVE-2025-58434, CVE-2025-59528, CVE-2025-8110.
-    * `Cap` : IDOR, Wireshark, FTP, Capability.
+    * `Cap` : IDOR, wireshark, FTP, Capability.
     * `Facts` : CVE-2025-2304, CVE-2024-46987, CMS Camaleon, AWS Bucket S3 (s3cmd), ssh2john, Facter.
-    * `CCTV` : Injection SQL, ZoneMinder, Bcrypt, bridge Docker, MotionEye, CVE-2024-51482.
+    * `CCTV` : Injection SQL, ZoneMinder, Bcrypt, Bridge Docker, MotionEye, CVE-2024-51482.
     * `Reactor` : Next.js, CVE-2025-55182(React2Shell), SQLite, Debugger Node.js.
+    * `Fireflow` : Langflow, CVE-2026-33017, Serveur MCP, JWT, Kubernetes, RBAC.
+    
 
 ---
 
