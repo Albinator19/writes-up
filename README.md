@@ -27,6 +27,13 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Nexus` : Krayin CRM, CVE-2026-38526, Gitea, Git(blob,tree), timer systemd.
 * **CTF**
     * `Shutlock2026`
+        * `Web`
+            * `Liaisons dangereuses` : mTLS, PKI, OpenSSL, Certificats X.509
+        * `Système`
+            * `Archives à couches multiples 1` : Format MLA, SHA256
+            * `Archives à couches multiples 2` : Ed25519, Signature cryptographique, Cron
+            * `Say My Name` : Kubernetes, ServiceAccount, RBAC, JWT, BusyBox
+       
 	
     
 
