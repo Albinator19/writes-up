@@ -26,7 +26,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Fireflow` : Langflow, CVE-2026-33017, Serveur MCP, JWT, Kubernetes, RBAC.
     * `Nexus` : Krayin CRM, CVE-2026-38526, Gitea, Git(blob,tree), timer systemd.
 * **CTF**
-    * `Shutlock2026`
+    * **[Shutlock2026](https://shutlock.fr/)**
         * `Web`
             * `Liaisons dangereuses` : mTLS, PKI, OpenSSL, Certificats X.509
         * `Système`
