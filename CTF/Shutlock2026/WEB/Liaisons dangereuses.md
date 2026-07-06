@@ -129,7 +129,7 @@ ce qui confirme l'existence réelle de cette CA (mentionnée dans l'énoncé), m
 À ce stade, on a identifié une chaîne de validation applicative en 3 niveaux :
 1. **CN** doit correspondre exactement à `supervisor.liaisons.local` (probablement le seul CN connu du système, ou une regex/liste blanche).
 2. **OU** doit correspondre à un `uid` existant dans l'annuaire simulé (`idmap`), ce qui détermine le `role` renvoyé.
-3. Le champ **`admin`** de la réponse dépend du `role` résolu — `supervisor` ne suffit pas.
+3. Le champ **`admin`** de la réponse dépend du `role` résolu, `supervisor` ne suffit pas.
 
 Pistes non encore explorées pour la suite :
 - Vérifier si le champ **`O`** (Organization) a lui aussi une influence sur le `directory_lookup`, ou si seul `OU` est utilisé comme l'indique `source_field`.
