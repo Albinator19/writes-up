@@ -1,6 +1,6 @@
 # Write-up -- Liaisons dangereuses
 
-> Write-up partiel : le flag n'a pas été obtenu à ce stade. Ce document présente la méthodologie et les résultats obtenus, ainsi que les pistes restant à explorer.
+> Write-up partiel : le flag n'a pas été obtenu à ce stade. Ce document présente la méthodologie et les résultats obtenus, ainsi que les pistes restantes à explorer.
 
 ## Contexte
 
