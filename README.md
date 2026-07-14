@@ -25,6 +25,8 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Reactor` : Next.js, CVE-2025-55182(React2Shell), SQLite, Debugger Node.js.
     * `Fireflow` : Langflow, CVE-2026-33017, Serveur MCP, JWT, Kubernetes, RBAC.
     * `Nexus` : Krayin CRM, CVE-2026-38526, Gitea, Git(blob,tree), timer systemd.
+* **[TryHackMe](https://tryhackme.com/)**
+    * `Billing` : MagnusBilling, CVE-2023-30258, fail2ban privesc.
 * **CTF**
     * **[Shutlock2026](https://shutlock.fr/)**
         * `Web`
