@@ -27,6 +27,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Nexus` : Krayin CRM, CVE-2026-38526, Gitea, Git(blob,tree), timer systemd.
 * **[TryHackMe](https://tryhackme.com/)**
     * `Billing` : MagnusBilling, CVE-2023-30258, fail2ban privesc.
+    * `Whiterose` : IDOR, EJS Template(CVE-2022-29078), sudoedit(CVE-2023-22809).
 * **CTF**
     * **[Shutlock2026](https://shutlock.fr/)**
         * `Web`
