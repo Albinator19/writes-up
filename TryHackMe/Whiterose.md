@@ -189,7 +189,7 @@ User web may run the following commands on cyprusbank:
  
 On va s'en servir pour modifier `/etc/sudoers` directement.
  
-**Fausse piste -- shell instable :**
+**Fausse piste : shell instable :**
  
 On exporte la variable et on lance sudoedit, mais impossible de quitter vim, le shell instable ne transmet pas correctement les touches de contrôle. On est bloqué.
  
