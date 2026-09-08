@@ -216,7 +216,7 @@ En explorant le système de fichiers, on trouve le flag utilisateur dans le bure
 C:\Users\sql_svc\Desktop> powershell -c Get-Content user.txt
 ```
 
-**Flag user :** `3e7b102e78218e935bf3f4951fec21a3`
+**Flag user :** `3e7...`
 
 ---
 
@@ -233,4 +233,4 @@ evil-winrm -i 10.129.85.13 -u administrator -p 'MEGACORP_4dm1n!!'
 b91ccec3305e98240082d4474b848528
 ```
 
-**Flag root :** `b91ccec3305e98240082d4474b848528`
+**Flag root :** `b91...`

@@ -194,7 +194,7 @@ ssh ben@10.129.38.119
 ben@silentium:~$ cat user.txt
 ```
 
-**Flag user :** `821c8e04e1f4305125fe2c4177879fc6`
+**Flag user :** `821...`
 
 ---
 
@@ -335,4 +335,4 @@ root@silentium:~# cat root.txt
 727db5b1aef0f7905c7fffd010d0b922
 ```
 
-**Flag root :** `727db5b1aef0f7905c7fffd010d0b922`
+**Flag root :** `727...`

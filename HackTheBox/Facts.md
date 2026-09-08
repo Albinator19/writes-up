@@ -221,7 +221,7 @@ Le flag utilisateur se trouve dans le home de `william` :
 trivia@facts:/home/william$ cat user.txt
 ```
 
-**Flag user :** `cf30e614e1088fcc315a23d49ef0e9ce`
+**Flag user :** `cf3...`
 
 ---
 
@@ -270,4 +270,4 @@ bash-5.2# cat /root/root.txt
 f5d7b57ac01230c0db4b5d9a3210f1be
 ```
 
-**Flag root :** `f5d7b57ac01230c0db4b5d9a3210f1be`
+**Flag root :** `f5d...`

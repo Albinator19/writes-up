@@ -158,7 +158,7 @@ On est en tant qu'utilisateur **`web`**.
 web@cyprusbank:~$ cat user.txt
 ```
  
-**Flag user :** `THM{4lways_upd4te_uR_d3p3nd3nc!3s}`
+**Flag user :** `THM{4lw...}`
  
 On explore le répertoire de l'application dans `/home/web/app`. Le `.env` contient la configuration de la base :
  
@@ -244,4 +244,4 @@ sudo su
 root@cyprusbank:/tmp# cat /root/root.txt
 ```
  
-**Flag root :** `THM{4nd_uR_p4ck4g3s}`
+**Flag root :** `THM{4nd...}`

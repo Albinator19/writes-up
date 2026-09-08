@@ -89,7 +89,7 @@ La connexion fonctionne.
 nathan@cap:~$ cat user.txt
 ```
 
-**Flag user :** `666565635afa75bffb46ea6bc0d825a1`
+**Flag user :** `666...`
 
 ---
 
@@ -127,4 +127,4 @@ On consulte [GTFOBins](https://gtfobins.github.io/) pour la technique d'exploita
 b28ab07afce5f58e2fcc0907ed690754
 ```
 
-**Flag root :** `b28ab07afce5f58e2fcc0907ed690754`
+**Flag root :** `b28...`

@@ -202,7 +202,7 @@ cd /home/michael
 cat user.txt
 ```
 
-**Flag user :** `6ced1a6a89e666c0620cdb10262ba127`
+**Flag user :** `6ce...`
 
 ---
 
@@ -220,4 +220,4 @@ root@unified:~# cat /root/root.txt
 e50bc93c75b634e4b272d2f771c33681
 ```
 
-**Flag root :** `e50bc93c75b634e4b272d2f771c33681`
+**Flag root :** `e50...`

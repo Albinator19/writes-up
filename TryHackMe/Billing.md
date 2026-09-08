@@ -73,7 +73,7 @@ On est en tant qu'utilisateur **`asterisk`**, le compte de service sous lequel t
 asterisk@billing:/home/magnus$ cat user.txt
 ```
 
-**Flag user :** `THM{4a6831d5f124b25eefb1e92e0f0da4ca}`
+**Flag user :** `THM{4a6...}`
 
 ---
 
@@ -166,4 +166,4 @@ bash-5.2# cat /root/root.txt
 THM{33ad5b530e71a172648f424ec23fae60}
 ```
 
-**Flag root :** `THM{33ad5b530e71a172648f424ec23fae60}`
+**Flag root :** `THM{33a...}`

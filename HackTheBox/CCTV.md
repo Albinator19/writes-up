@@ -245,7 +245,7 @@ ls
 cat user.txt
 ```
 
-**Flag user :** `4353dc04b65542010dd34d343fe842b6`
+**Flag user :** `435...`
 
 ---
 
@@ -315,4 +315,4 @@ On obtient un shell **root** en retour.
 root@cctv:/etc/motioneye# cat /root/root.txt
 ```
 
-**Flag root :** `f0325e671a60d0beefca2a24cbc720d4`
+**Flag root :** `f03...`

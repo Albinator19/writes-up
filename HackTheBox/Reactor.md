@@ -157,7 +157,7 @@ su engineer
 engineer@reactor:~$ cat user.txt
 ```
 
-**Flag user :** `5114264ea8d8cdce46d7e299ff1f9750`
+**Flag user :** `511...`
 
 ---
 
@@ -205,4 +205,4 @@ On est root. On lit directement le flag :
 '0fce324e03f333cab65796594be649ea\n'
 ```
 
-**Flag root :** `0fce324e03f333cab65796594be649ea`
+**Flag root :** `0fc...`

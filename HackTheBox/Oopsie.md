@@ -186,7 +186,7 @@ Le flag utilisateur se trouve dans le home de robert :
 robert@oopsie:~$ cat user.txt
 ```
 
-**Flag user :** `f2c74ee8db7983851ab2a96a44eb7981`
+**Flag user :** `f2c...`
 
 ---
 
@@ -209,4 +209,4 @@ Provide Bug ID: ../root.txt
 af13b0bee69f8a877c3faf667f7beacf
 ```
 
-**Flag root :** `af13b0bee69f8a877c3faf667f7beacf`
+**Flag root :** `af1...`

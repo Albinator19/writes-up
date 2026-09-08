@@ -154,7 +154,7 @@ su nightfall
 nightfall@fireflow:~$ cat user.txt
 ```
 
-**Flag user :** `b33726167401a7f8887bfaf867b03df7`
+**Flag user :** `b33...`
 
 ---
 
@@ -500,4 +500,4 @@ HTTP/1.1 101 Switching Protocols
 874420af68d2fd19807ff7f4c07c9b59
 ```
 
-**Flag root :** `874420af68d2fd19807ff7f4c07c9b59`
+**Flag root :** `874...`

@@ -239,7 +239,7 @@ ssh jones@10.129.27.218
 jones@nexus:~$ cat user.txt
 ```
 
-**Flag user :** `08be28e5d43475c81ae6517dc4ff0bde`
+**Flag user :** `08b...`
 
 ---
 
@@ -464,4 +464,4 @@ root@nexus:~#
 root@nexus:~# cat /root/root.txt
 ```
 
-**Flag root :** `6e5a5f2628fbb007812ed6100ba95226`
+**Flag root :** `6e5...`

@@ -191,7 +191,7 @@ Le flag utilisateur se trouve dans le home de postgres :
 postgres@vaccine:~$ cat user.txt
 ```
 
-**Flag user :** `ec9b13ca4d6229cd5cc1e09980965bf7`
+**Flag user :** `ec9...`
 
 ---
 
@@ -203,4 +203,4 @@ Depuis le shell root obtenu via vi :
 root@vaccine:/var/lib/postgresql# cat /root/root.txt
 ```
 
-**Flag root :** `dd6e058e814260bc70e9bbdef2715849`
+**Flag root :** `dd6...`
