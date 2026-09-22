@@ -26,6 +26,7 @@ Les solutions sont organisées par plateforme et par thématique :
     * `Fireflow` : Langflow, CVE-2026-33017, Serveur MCP, JWT, Kubernetes, RBAC.
     * `Nexus` : Krayin CRM, CVE-2026-38526, Gitea, Git(blob,tree), timer systemd.
     * `Support` : Active Directory, SMB, Rétro-Ingénierie .NET, LDAP, RBCD.
+    * `Management` : OpenAM (CVE-2026-33439), GLPI, XChaCha20-Poly1305 crypt, rdiff-backup privesc.
 * **[TryHackMe](https://tryhackme.com/)**
     * `Billing` : MagnusBilling, CVE-2023-30258, fail2ban privesc.
     * `Whiterose` : IDOR, EJS Template(CVE-2022-29078), sudoedit(CVE-2023-22809).
