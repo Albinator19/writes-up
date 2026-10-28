@@ -30,6 +30,9 @@ Les solutions sont organisées par plateforme et par thématique :
 * **[TryHackMe](https://tryhackme.com/)**
     * `Billing` : MagnusBilling, CVE-2023-30258, fail2ban privesc.
     * `Whiterose` : IDOR, EJS Template(CVE-2022-29078), sudoedit(CVE-2023-22809).
+* **[Crackme](https://crackmes.one/)**
+    * `My First Crackme (Very Easy)` : Windows, x86-64, C/C++.
+    * `Simple Java Verify` : Android, Java.
 * **CTF**
     * **[Shutlock2026](https://shutlock.fr/)**
         * `Web`
